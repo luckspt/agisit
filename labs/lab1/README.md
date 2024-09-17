@@ -77,12 +77,12 @@ If using Chocolatey, to install the packages/applications you just do the follow
     C:\> choco install atom
     C:\> choco install vscode
 
-You also need to download and install the [Virtualbox Extension Pack](https://download.virtualbox.org/virtualbox/6.1.38/Oracle_VM_VirtualBox_Extension_Pack-6.1.38.vbox-extpack). After downloading, open again a **Command Prompt** or a **Powershell** Console, with Administrator privileges and run the following command (adapt for the version downloaded):
+You also need to download and install the [Virtualbox 7.0.0 Extension Pack](https://download.virtualbox.org/virtualbox/7.0.0_BETA3/Oracle_VM_VirtualBox_Extension_Pack-7.0.0_BETA3-153829.vbox-extpack). After downloading, open again a **Command Prompt** or a **Powershell** Console, with Administrator privileges and run the following command (adapt for the version downloaded):
 
     C:\> cd "c:\Program Files\Oracle\VirtualBox"
     C:\Program Files\Oracle\VirtualBox> vboxmanage extpack install extension_pack_path
 
-Where ``extension_pack_path`` can be, e.g.: ``c:\downloads\Oracle_VM_VirtualBox_Extension_Pack-6.1.38.vbox-extpack``
+Where ``extension_pack_path`` can be, e.g.: ``c:\downloads\Oracle_VM_VirtualBox_Extension_Pack-7.0.0_BETA3-153829.vbox-extpack``
 
 After this point, and in order to settle everything (Windows is quite tricky in updating environment variables), close the Console.
 
@@ -157,7 +157,7 @@ Some packages are also available as **Snap Packages**. In the case of Visual Stu
 
 Please note that for latest distributions of Ubuntu, a careful install of **Oracle Virtualbox** is required, as the package architecture has to match the Linux kernel architecture.
 
-Additionally, the VirtualBox package in Ubuntu may have some issues when running in RAM-constrained environments. For that purpose, you need to ensure that you have the adequate sources referenced for your kernel architecture. As such, the recommendation is to follow the instructions in [Virtualbox in Debian-based Linux distributions](https://www.virtualbox.org/wiki/Linux_Downloads).
+It is recommended that you install [VirtualBox 7.0](https://www.virtualbox.org/wiki/Download_Old_Builds_7_0) version to run this guide smoothly. However, if you encounter any issues running in RAM-constrained environments in Ubuntu, you can try to follow the instructions in [Virtualbox in Debian-based Linux distributions](https://www.virtualbox.org/wiki/Linux_Downloads).
 
 Finally, to install Vagrant we recommend you head to their official [download page](https://www.vagrantup.com/downloads) and follow the instructions provided for your specific distribution. If you encounter problems during the installation, the [official documentation](https://www.vagrantup.com/docs/installation) is a helpful resource.
 
@@ -205,6 +205,10 @@ In order to ensure adequate updating and upgrading for Vagrant environments **us
 or, if already installed,
 
     > vagrant plugin update vagrant-vbguest #skip this instruction if using an Apple chip
+
+If you are on **macOS with an Apple chip**, go to `/opt/vagrant/embedded/gems/gems/vagrant-2.4.1/plugins/providers/docker/driver.rb` file (assuming you have the latest Vagrant version 2.4.1) and make sure you add an initial condition `config &&` in line 352 with root permissions (ref: https://github.com/hashicorp/vagrant/issues/13371). You should obtain the following:
+
+    if (config && config.size > 0 &&
 
 If all set, you can now launch a very simple environment, following these steps:
 
