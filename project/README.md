@@ -53,7 +53,7 @@ The advanced components for the solution either provide additional features or c
 
 After finalizing your project, you need to prepare documentation on it (deliverables) and submit it for evaluation. There is only one submission for each group, produced collaboratively, and needs to be submitted by just one member of the group.
 
-**The deadline for this submission is Friday, October 27th, 2023, by 11h59 pm.**
+**The deadline for this submission is Friday, October 25th, 2024, by 11h59 pm.**
 
 The deliverables to submit (to the specified platform) are the following:
 
