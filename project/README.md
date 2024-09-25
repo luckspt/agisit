@@ -72,6 +72,8 @@ The Report must be a PDF file submitted to **Fenix**. The name of the file **mus
 - The content of the report should include: i) an Introduction explaining the context of the project, ii) the System Design and Architecture corresponding to the base system, iii) Advanced Components or Deployment Methods correspondoing to your advanced features, and iv) an Evaluation section that includes a throughput and latency study of the system as the number of clients generating requests increases;
 - The report should be limited to 5 pages using Times New Roman, Arial or similar, at least font size 10, margin sizes (2.0 cm side and 1.5 cm top and bottom), and single line spacing. 
 
+If you are looking for a report template, [LNCS](https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines).
+
 ### Source code
 
 The source code of the project should be submitted to the team repository presented above and contain all files and directories necessary for reproducing the experiment, including instructional READMEs, screenshots and diagrams illustrating the architecture, the steps, the procedures, and application usage (including screenshots of the Web UI), etc.
