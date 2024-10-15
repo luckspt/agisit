@@ -1,0 +1,13 @@
+---
+- hosts: master
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: Copy join command from ansible host to the worker nodes.
+      copy: 
+        src: deployment.yaml
+        dest: /home/ubuntu/deployment.yaml
+        mode: 0777
+    - name: Start deployment
+      shell: sudo kubectl apply -f /home/ubuntu/deployment.yaml
